@@ -5,6 +5,7 @@ import { Button } from './ui/button'
 import Link from 'next/link'
 import { BellIcon, HomeIcon, UserIcon } from 'lucide-react'
 import { SignInButton, SignUpButton, UserButton } from '@clerk/nextjs'
+import RouteLoader from "@/components/RouterLoader";
 
 
 async function DesktopNavbar() {
@@ -13,6 +14,7 @@ async function DesktopNavbar() {
 
   return (
     <div className="hidden md:flex items-center space-x-4">
+        <RouteLoader />
         <ModeToggle />
 
         <Button variant="ghost" className=" flex items-center gap-2" asChild>

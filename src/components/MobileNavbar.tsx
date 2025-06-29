@@ -15,7 +15,7 @@ import { useState } from "react";
 import {  SignInButton, SignOutButton, useUser } from "@clerk/nextjs";
 import { useTheme } from "next-themes";
 import Link from "next/link";
-import { currentUser } from "@clerk/nextjs/server";
+import RouteLoader from "@/components/RouterLoader";
 
 function MobileNavbar() {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
@@ -23,6 +23,7 @@ function MobileNavbar() {
   const { theme, setTheme } = useTheme();
   return (
     <div className="flex md:hidden items-center space-x-2">
+      <RouteLoader />
       <Button
         variant="ghost"
         size="icon"
