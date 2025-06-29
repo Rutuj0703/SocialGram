@@ -17,7 +17,7 @@ import { useTheme } from "next-themes";
 import Link from "next/link";
 import { currentUser } from "@clerk/nextjs/server";
 
-async function MobileNavbar() {
+function MobileNavbar() {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
   const { user,isSignedIn } = useUser();
   const { theme, setTheme } = useTheme();
