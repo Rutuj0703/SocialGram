@@ -12,16 +12,15 @@ import {
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { useState } from "react";
-import { useAuth, SignInButton, SignOutButton } from "@clerk/nextjs";
+import {  SignInButton, SignOutButton, useUser } from "@clerk/nextjs";
 import { useTheme } from "next-themes";
 import Link from "next/link";
 import { currentUser } from "@clerk/nextjs/server";
 
 async function MobileNavbar() {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
-  const { isSignedIn } = useAuth();
+  const { user,isSignedIn } = useUser();
   const { theme, setTheme } = useTheme();
-  const user = await currentUser();
   return (
     <div className="flex md:hidden items-center space-x-2">
       <Button
