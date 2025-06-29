@@ -46,8 +46,10 @@ async function MobileNavbar() {
             <SheetTitle>Menu</SheetTitle>
           </SheetHeader>
           <nav className="flex flex-col space-y-4 mt-6">
-            <Button variant="ghost" className="flex items-center gap-3 justify-start" asChild>
-              <Link href="/">
+            <Button 
+            variant="ghost" 
+            className="flex items-center gap-3 justify-start" asChild>
+              <Link href="/" onClick={() => setShowMobileMenu(false)}>
                 <HomeIcon className="w-4 h-4" />
                 Home
               </Link>
@@ -56,7 +58,7 @@ async function MobileNavbar() {
             {isSignedIn ? (
               <>
                 <Button variant="ghost" className="flex items-center gap-3 justify-start" asChild>
-                  <Link href="/notifications">
+                  <Link href="/notifications" onClick={() => setShowMobileMenu(false)}>
                     <BellIcon className="w-4 h-4" />
                     Notifications
                   </Link>
@@ -64,7 +66,7 @@ async function MobileNavbar() {
                 <Button variant="ghost" className="flex items-center gap-3 justify-start" asChild>
                   <Link href={`/profile/${
                 user?.username ?? user?.emailAddresses[0].emailAddress.split("@")[0]
-                }`}>
+                }`} onClick={() => setShowMobileMenu(false)}>
                     <UserIcon className="w-4 h-4" />
                     Profile
                   </Link>
